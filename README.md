@@ -9,6 +9,7 @@ A comprehensive Python application for evaluating whether stocks are undervalued
 ## 🚀 Features
 
 - **Object-Oriented Design** - Clean, modular architecture
+- **Individual Method Selection** - Choose specific valuation methods (PER, PBV, PEG, or All)
 - **Comprehensive Analysis** - Multiple valuation metrics with confidence levels
 - **Input Validation** - Robust error handling and data validation
 - **Flexible Interface** - Interactive mode, programmatic API, and examples
@@ -52,21 +53,63 @@ idx-valuation/
 
 ### Interactive Mode
 
-Run the main application for interactive stock analysis:
+Run the main application and select which valuation method to use:
 
 ```bash
 python main.py
 ```
 
+You'll be prompted to choose from:
+
+1. **PER** - Price-to-Earnings Ratio Analysis only
+2. **PBV** - Price-to-Book Value Analysis only  
+3. **PEG** - Price/Earnings-to-Growth Analysis only
+4. **All** - Complete analysis using all methods
+
 ### Sample Analysis
 
-Run with sample data to see the analyzer in action:
+Run with sample data (Apple Inc.) and choose method:
 
 ```bash
 python main.py --sample
 ```
 
-### Programmatic Usage
+### Individual Method Usage
+
+Use specific valuation methods programmatically:
+
+```python
+from src.analyzer import StockValuationAnalyzer
+
+analyzer = StockValuationAnalyzer()
+
+# P/E Ratio Analysis Only
+per_result = analyzer.analyze_per_only(
+    current_price=185.50,
+    eps=6.15,
+    historical_per=28.5,
+    industry_per=25.0
+)
+
+# P/B Ratio Analysis Only
+pbv_result = analyzer.analyze_pbv_only(
+    current_price=185.50,
+    bvps=4.25,
+    historical_pbv=42.0,
+    industry_pbv=3.8
+)
+
+# PEG Ratio Analysis Only
+peg_result = analyzer.analyze_peg_only(
+    current_price=185.50,
+    eps=6.15,
+    eps_growth=8.5
+)
+
+print(per_result)  # Individual method results
+```
+
+### Complete Analysis
 
 ```python
 from src.analyzer import StockValuationAnalyzer
@@ -74,7 +117,7 @@ from src.analyzer import StockValuationAnalyzer
 # Create analyzer instance
 analyzer = StockValuationAnalyzer()
 
-# Quick analysis with direct parameters
+# Quick analysis with all methods
 result = analyzer.quick_analysis(
     current_price=185.50,
     eps=6.15,
