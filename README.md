@@ -135,7 +135,7 @@ print("Overall Verdict:", analysis['overall_verdict'])
 
 - Compares current P/E with historical and industry benchmarks
 - Uses the higher (more conservative) benchmark
-- Default tolerance: ±15%
+- Default tolerance: ±15 %
 
 ### P/B Ratio Analysis  
 
