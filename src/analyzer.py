@@ -157,14 +157,14 @@ class StockValuationAnalyzer:
         summary_lines = [
             f"=== {method.upper()} VALUATION ANALYSIS ===",
             "",
-            f"Stock Price: ${stock_data.current_price:.2f}",
+            f"Stock Price: Rp {stock_data.current_price:,.0f}",
         ]
         
         # Add relevant stock info based on method
         if method in ['per', 'peg']:
-            summary_lines.append(f"Earnings Per Share: ${stock_data.eps:.2f}")
+            summary_lines.append(f"Earnings Per Share: Rp {stock_data.eps:,.0f}")
         if method == 'pbv':
-            summary_lines.append(f"Book Value Per Share: ${stock_data.bvps:.2f}")
+            summary_lines.append(f"Book Value Per Share: Rp {stock_data.bvps:,.0f}")
         if method == 'peg':
             summary_lines.append(f"Earnings Growth Rate: {stock_data.eps_growth}%")
         
@@ -276,9 +276,9 @@ class StockValuationAnalyzer:
         summary_lines = [
             "=== STOCK VALUATION ANALYSIS SUMMARY ===",
             "",
-            f"Stock Price: ${stock_data.current_price:.2f}",
-            f"Earnings Per Share: ${stock_data.eps:.2f}",
-            f"Book Value Per Share: ${stock_data.bvps:.2f}",
+            f"Stock Price: Rp {stock_data.current_price:,.0f}",
+            f"Earnings Per Share: Rp {stock_data.eps:,.0f}",
+            f"Book Value Per Share: Rp {stock_data.bvps:,.0f}",
             f"Earnings Growth Rate: {stock_data.eps_growth}%",
             "",
             "CURRENT RATIOS:",
@@ -464,8 +464,8 @@ class StockValuationAnalyzer:
             summary_lines = [
                 "=== P/E RATIO VALUATION ANALYSIS ===",
                 "",
-                f"Stock Price: ${current_price:.2f}",
-                f"Earnings Per Share: ${eps:.2f}",
+                f"Stock Price: Rp {current_price:,.0f}",
+                f"Earnings Per Share: Rp {eps:,.0f}",
                 f"Current P/E Ratio: {current_per:.2f}",
                 f"Historical P/E Ratio: {historical_per:.2f}",
                 f"Industry P/E Ratio: {industry_per:.2f}",
@@ -515,8 +515,8 @@ class StockValuationAnalyzer:
             summary_lines = [
                 "=== P/B RATIO VALUATION ANALYSIS ===",
                 "",
-                f"Stock Price: ${current_price:.2f}",
-                f"Book Value Per Share: ${bvps:.2f}",
+                f"Stock Price: Rp {current_price:,.0f}",
+                f"Book Value Per Share: Rp {bvps:,.0f}",
                 f"Current P/B Ratio: {current_pbv:.2f}",
                 f"Historical P/B Ratio: {historical_pbv:.2f}",
                 f"Industry P/B Ratio: {industry_pbv:.2f}",
@@ -563,8 +563,8 @@ class StockValuationAnalyzer:
             summary_lines = [
                 "=== PEG RATIO VALUATION ANALYSIS ===",
                 "",
-                f"Stock Price: ${current_price:.2f}",
-                f"Earnings Per Share: ${eps:.2f}",
+                f"Stock Price: Rp {current_price:,.0f}",
+                f"Earnings Per Share: Rp {eps:,.0f}",
                 f"Earnings Growth Rate: {eps_growth}%",
                 f"Current P/E Ratio: {current_per:.2f}",
                 f"Current PEG Ratio: {current_peg:.2f}",
