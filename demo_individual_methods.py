@@ -30,29 +30,29 @@ def demo_individual_methods():
     # Sample stock data for different scenarios
     scenarios = [
         {
-            'name': 'Apple Inc. (AAPL)',
+            'name': 'Bank Central Asia (BBCA.JK)',
             'data': {
-                'current_price': 185.50,
-                'eps': 6.15,
-                'bvps': 4.25,
-                'eps_growth': 8.5,
-                'historical_per': 28.5,
-                'industry_per': 25.0,
-                'historical_pbv': 42.0,
-                'industry_pbv': 3.8
+                'current_price': 9250.0,    # IDR
+                'eps': 1150.0,              # IDR
+                'bvps': 2850.0,             # IDR
+                'eps_growth': 12.5,         # %
+                'historical_per': 8.5,
+                'industry_per': 9.2,
+                'historical_pbv': 3.2,
+                'industry_pbv': 2.8
             }
         },
         {
-            'name': 'Value Stock Example',
+            'name': 'Telkom Indonesia (TLKM.JK)',
             'data': {
-                'current_price': 45.20,
-                'eps': 3.80,
-                'bvps': 18.50,
-                'eps_growth': 4.2,
-                'historical_per': 15.5,
-                'industry_per': 18.0,
-                'historical_pbv': 2.8,
-                'industry_pbv': 3.2
+                'current_price': 3850.0,    # IDR
+                'eps': 485.0,               # IDR
+                'bvps': 1650.0,             # IDR
+                'eps_growth': 6.8,          # %
+                'historical_per': 8.2,
+                'industry_per': 9.5,
+                'historical_pbv': 2.1,
+                'industry_pbv': 2.4
             }
         }
     ]
