@@ -1,10 +1,12 @@
-# 📊 Stock Valuation Analyzer
+# 📊 Stock Valuation Analyzer - Indonesian Market
 
-A comprehensive Python application for evaluating whether stocks are undervalued, fairly valued, or overvalued using three key financial ratios:
+A comprehensive Python application for evaluating whether Indonesian stocks are undervalued, fairly valued, or overvalued using three key financial ratios:
 
 - **P/E Ratio (Price-to-Earnings)** - Compares current P/E with historical and industry benchmarks
 - **P/B Ratio (Price-to-Book Value)** - Analyzes price relative to book value per share
 - **PEG Ratio (Price/Earnings-to-Growth)** - Evaluates valuation considering earnings growth
+
+Specifically designed for Indonesian Stock Exchange (IDX) with IDR currency formatting.
 
 ## 🚀 Features
 
@@ -68,7 +70,7 @@ You'll be prompted to choose from:
 
 ### Sample Analysis
 
-Run with sample data (Apple Inc.) and choose method:
+Run with sample data (Bank Central Asia) and choose method:
 
 ```bash
 python main.py --sample
@@ -85,25 +87,25 @@ analyzer = StockValuationAnalyzer()
 
 # P/E Ratio Analysis Only
 per_result = analyzer.analyze_per_only(
-    current_price=185.50,
-    eps=6.15,
-    historical_per=28.5,
-    industry_per=25.0
+    current_price=9250.0,    # IDR
+    eps=1150.0,              # IDR
+    historical_per=8.5,
+    industry_per=9.2
 )
 
 # P/B Ratio Analysis Only
 pbv_result = analyzer.analyze_pbv_only(
-    current_price=185.50,
-    bvps=4.25,
-    historical_pbv=42.0,
-    industry_pbv=3.8
+    current_price=9250.0,    # IDR
+    bvps=2850.0,             # IDR
+    historical_pbv=3.2,
+    industry_pbv=2.8
 )
 
 # PEG Ratio Analysis Only
 peg_result = analyzer.analyze_peg_only(
-    current_price=185.50,
-    eps=6.15,
-    eps_growth=8.5
+    current_price=9250.0,    # IDR
+    eps=1150.0,              # IDR
+    eps_growth=12.5
 )
 
 print(per_result)  # Individual method results
@@ -119,14 +121,14 @@ analyzer = StockValuationAnalyzer()
 
 # Quick analysis with all methods
 result = analyzer.quick_analysis(
-    current_price=185.50,
-    eps=6.15,
-    bvps=4.25,
-    eps_growth=8.5,
-    historical_per=28.5,
-    industry_per=25.0,
-    historical_pbv=42.0,
-    industry_pbv=3.8
+    current_price=9250.0,    # IDR
+    eps=1150.0,              # IDR
+    bvps=2850.0,             # IDR
+    eps_growth=12.5,         # %
+    historical_per=8.5,
+    industry_per=9.2,
+    historical_pbv=3.2,
+    industry_pbv=2.8
 )
 
 print(result)
@@ -140,14 +142,14 @@ from src.stock_data import StockData
 
 # Create stock data object
 stock_data = StockData(
-    current_price=120.00,
-    eps=7.50,
-    bvps=22.00,
-    eps_growth=12.0,
-    historical_per=18.0,
-    industry_per=20.0,
-    historical_pbv=5.5,
-    industry_pbv=4.8
+    current_price=12500.0,   # IDR
+    eps=950.0,               # IDR
+    bvps=4200.0,             # IDR
+    eps_growth=15.0,         # %
+    historical_per=12.5,
+    industry_per=14.2,
+    historical_pbv=2.8,
+    industry_pbv=3.1
 )
 
 # Perform detailed analysis
@@ -163,14 +165,16 @@ print("Overall Verdict:", analysis['overall_verdict'])
 
 | Parameter | Description | Type | Example |
 |-----------|-------------|------|---------|
-| `current_price` | Current market price per share | float | 185.50 |
-| `eps` | Earnings Per Share (annual) | float | 6.15 |
-| `bvps` | Book Value Per Share | float | 4.25 |
-| `eps_growth` | Earnings growth rate (%) | float | 8.5 |
-| `historical_per` | Historical P/E ratio | float | 28.5 |
-| `industry_per` | Industry average P/E ratio | float | 25.0 |
-| `historical_pbv` | Historical P/B ratio | float | 42.0 |
-| `industry_pbv` | Industry average P/B ratio | float | 3.8 |
+| `current_price` | Current market price per share | float | 9250.0 |
+| `eps` | Earnings Per Share (annual) | float | 1150.0 |
+| `bvps` | Book Value Per Share | float | 2850.0 |
+| `eps_growth` | Earnings growth rate (%) | float | 12.5 |
+| `historical_per` | Historical P/E ratio | float | 8.5 |
+| `industry_per` | Industry average P/E ratio | float | 9.2 |
+| `historical_pbv` | Historical P/B ratio | float | 3.2 |
+| `industry_pbv` | Industry average P/B ratio | float | 2.8 |
+
+*All price values are in Indonesian Rupiah (IDR)*
 
 ## 📈 Valuation Logic
 
