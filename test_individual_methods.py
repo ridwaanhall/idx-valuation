@@ -22,12 +22,12 @@ def test_per_only():
     
     analyzer = StockValuationAnalyzer()
     
-    # Test data for P/E analysis only
+    # Test data for P/E analysis only - BBCA (Bank Central Asia)
     result = analyzer.analyze_per_only(
-        current_price=185.50,
-        eps=6.15,
-        historical_per=28.5,
-        industry_per=25.0
+        current_price=9250.0,    # IDR
+        eps=1150.0,              # IDR
+        historical_per=8.5,
+        industry_per=9.2
     )
     
     print(result)
@@ -42,12 +42,12 @@ def test_pbv_only():
     
     analyzer = StockValuationAnalyzer()
     
-    # Test data for P/B analysis only
+    # Test data for P/B analysis only - BBCA (Bank Central Asia)
     result = analyzer.analyze_pbv_only(
-        current_price=185.50,
-        bvps=4.25,
-        historical_pbv=42.0,
-        industry_pbv=35.0
+        current_price=9250.0,    # IDR
+        bvps=2850.0,             # IDR
+        historical_pbv=3.2,
+        industry_pbv=2.8
     )
     
     print(result)
@@ -62,11 +62,11 @@ def test_peg_only():
     
     analyzer = StockValuationAnalyzer()
     
-    # Test data for PEG analysis only
+    # Test data for PEG analysis only - BBCA (Bank Central Asia)
     result = analyzer.analyze_peg_only(
-        current_price=185.50,
-        eps=6.15,
-        eps_growth=8.5
+        current_price=9250.0,    # IDR
+        eps=1150.0,              # IDR
+        eps_growth=12.5
     )
     
     print(result)
@@ -81,16 +81,16 @@ def test_all_methods():
     
     analyzer = StockValuationAnalyzer()
     
-    # Complete test data
+    # Complete test data - BBCA (Bank Central Asia)
     result = analyzer.quick_analysis(
-        current_price=185.50,
-        eps=6.15,
-        bvps=4.25,
-        eps_growth=8.5,
-        historical_per=28.5,
-        industry_per=25.0,
-        historical_pbv=42.0,
-        industry_pbv=3.8
+        current_price=9250.0,    # IDR
+        eps=1150.0,              # IDR
+        bvps=2850.0,             # IDR
+        eps_growth=12.5,         # %
+        historical_per=8.5,
+        industry_per=9.2,
+        historical_pbv=3.2,
+        industry_pbv=2.8
     )
     
     print(result)
