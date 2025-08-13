@@ -68,16 +68,16 @@ def get_user_input(method: str) -> Dict[str, float]:
     
     try:
         # Collect basic stock information (always needed)
-        current_price = float(input("Current Stock Price ($): "))
+        current_price = float(input("Current Stock Price (IDR): "))
         
         data = {'current_price': current_price}
         
         if method in ['per', 'peg', 'all']:
-            eps = float(input("Earnings Per Share (EPS) ($): "))
+            eps = float(input("Earnings Per Share (EPS) (IDR): "))
             data['eps'] = eps
             
         if method in ['pbv', 'all']:
-            bvps = float(input("Book Value Per Share (BVPS) ($): "))
+            bvps = float(input("Book Value Per Share (BVPS) (IDR): "))
             data['bvps'] = bvps
             
         if method in ['peg', 'all']:
@@ -140,19 +140,19 @@ def run_sample_analysis():
     if method is None:
         return
     
-    print(f"Using sample data for Apple Inc. (AAPL) with {method.upper()} analysis")
+    print(f"Using sample data for BBCA.JK (Bank Central Asia) with {method.upper()} analysis")
     print()
     
-    # Sample data - Apple Inc. example
+    # Sample data - BCA (Bank Central Asia) example - Indonesian stock
     sample_data = {
-        'current_price': 185.50,
-        'eps': 6.15,
-        'bvps': 4.25,
-        'eps_growth': 8.5,
-        'historical_per': 28.5,
-        'industry_per': 25.0,
-        'historical_pbv': 42.0,
-        'industry_pbv': 3.8
+        'current_price': 9250.0,    # IDR
+        'eps': 1150.0,              # IDR
+        'bvps': 2850.0,             # IDR
+        'eps_growth': 12.5,         # %
+        'historical_per': 8.5,
+        'industry_per': 9.2,
+        'historical_pbv': 3.2,
+        'industry_pbv': 2.8
     }
     
     analyzer = StockValuationAnalyzer()
